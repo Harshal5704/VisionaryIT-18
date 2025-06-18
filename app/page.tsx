@@ -55,6 +55,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Navigation } from "@/components/navigation"
+import { Footer } from "@/components/footer"
 import Link from "next/link"
 
 // Particle System Component
@@ -1155,6 +1156,9 @@ export default function VisionFlowTech() {
           </motion.div>
         </div>
       </section>
+
+      {/* Footer */}
+      <Footer />
 
       {/* Sticky Chat Button */}
       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="fixed bottom-6 right-6 z-50">
