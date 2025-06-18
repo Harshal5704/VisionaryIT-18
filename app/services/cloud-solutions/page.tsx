@@ -1,71 +1,78 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Smartphone, Monitor, Tablet, Zap, Shield, Users, CheckCircle, MessageCircle } from "lucide-react"
+import { Cloud, Server, Shield, Zap, Database, Globe, CheckCircle, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 
-export default function AppDevelopmentPage() {
+export default function CloudSolutionsPage() {
   const features = [
     {
-      icon: Smartphone,
-      title: "Native & Cross-Platform",
-      description: "iOS, Android, and cross-platform solutions using latest technologies",
-    },
-    {
-      icon: Zap,
-      title: "High Performance",
-      description: "Optimized apps with fast loading times and smooth user experience",
+      icon: Cloud,
+      title: "Cloud Migration",
+      description: "Seamless migration of your infrastructure to the cloud",
     },
     {
       icon: Shield,
-      title: "Secure & Scalable",
-      description: "Enterprise-grade security with scalable architecture",
+      title: "Security & Compliance",
+      description: "Enterprise-grade security with industry compliance standards",
     },
     {
-      icon: Users,
-      title: "User-Centric Design",
-      description: "Intuitive interfaces designed for maximum user engagement",
+      icon: Zap,
+      title: "Auto-Scaling",
+      description: "Automatically scale resources based on demand",
+    },
+    {
+      icon: Database,
+      title: "Data Management",
+      description: "Comprehensive data storage and management solutions",
     },
   ]
 
-  const technologies = [
-    "Swift",
-    "Kotlin",
-    "Flutter",
-    "React Native",
-    "Java",
-    "Python",
-    "Firebase",
-    "AWS",
-    "MongoDB",
-    "PostgreSQL",
-    "Node.js",
-    "Express.js",
+  const cloudServices = [
+    {
+      title: "Infrastructure as a Service (IaaS)",
+      description: "Scalable computing resources on-demand",
+      icon: Server,
+      features: ["Virtual Machines", "Storage Solutions", "Network Infrastructure", "Load Balancing"],
+    },
+    {
+      title: "Platform as a Service (PaaS)",
+      description: "Complete development and deployment platform",
+      icon: Globe,
+      features: ["Application Hosting", "Database Services", "Development Tools", "CI/CD Pipelines"],
+    },
+    {
+      title: "Software as a Service (SaaS)",
+      description: "Ready-to-use software applications",
+      icon: Cloud,
+      features: ["Business Applications", "Collaboration Tools", "Analytics Platforms", "Custom Solutions"],
+    },
   ]
 
-  const appTypes = [
-    {
-      title: "Mobile Apps",
-      description: "Native iOS and Android applications",
-      icon: Smartphone,
-      features: ["iOS Development", "Android Development", "App Store Optimization", "Push Notifications"],
-    },
-    {
-      title: "Web Applications",
-      description: "Progressive web apps and web platforms",
-      icon: Monitor,
-      features: ["Progressive Web Apps", "Single Page Applications", "Real-time Features", "Cloud Integration"],
-    },
-    {
-      title: "Enterprise Solutions",
-      description: "Custom business applications and workflows",
-      icon: Tablet,
-      features: ["Custom CRM/ERP", "Workflow Automation", "Data Analytics", "Third-party Integration"],
-    },
+  const cloudProviders = [
+    "Amazon AWS",
+    "Microsoft Azure",
+    "Google Cloud",
+    "DigitalOcean",
+    "Linode",
+    "Vultr",
+    "Kubernetes",
+    "Docker",
+    "Terraform",
+    "Ansible",
+    "Jenkins",
+    "GitLab CI/CD",
+  ]
+
+  const benefits = [
+    { title: "Cost Reduction", description: "Reduce infrastructure costs by up to 40%" },
+    { title: "Improved Scalability", description: "Scale resources instantly based on demand" },
+    { title: "Enhanced Security", description: "Enterprise-grade security and compliance" },
+    { title: "24/7 Availability", description: "99.9% uptime with global redundancy" },
   ]
 
   return (
@@ -74,7 +81,7 @@ export default function AppDevelopmentPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4 bg-gradient-to-br from-purple-50 to-pink-50">
+      <section className="pt-24 pb-16 px-4 bg-gradient-to-br from-cyan-50 to-blue-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -84,31 +91,31 @@ export default function AppDevelopmentPage() {
           >
             <div className="flex justify-center mb-6">
               <div className="p-4 bg-white rounded-full shadow-lg">
-                <Smartphone className="h-12 w-12 text-purple-600" />
+                <Cloud className="h-12 w-12 text-cyan-600" />
               </div>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">App Development</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">Cloud Solutions</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Transform your ideas into powerful mobile and web applications. We create robust, scalable apps that
-              deliver exceptional user experiences across all platforms.
+              Accelerate your business with powerful cloud infrastructure. We provide comprehensive cloud solutions that
+              enhance performance, reduce costs, and ensure scalability for your growing business needs.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white"
+                className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white"
                 onClick={() => window.open("https://wa.me/919731070591", "_blank")}
               >
-                Start Your App
+                Migrate to Cloud
               </Button>
               <Button variant="outline" size="lg">
-                View Portfolio
+                View Architecture
               </Button>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* App Types Section */}
+      {/* Benefits Section */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -118,11 +125,46 @@ export default function AppDevelopmentPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Types of Applications We Build</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Why Choose Our Cloud Solutions?</h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+              >
+                <Card className="text-center h-full">
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold mb-3 text-gray-900">{benefit.title}</h3>
+                    <p className="text-gray-600">{benefit.description}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Cloud Services Section */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Our Cloud Services</h2>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {appTypes.map((type, index) => (
+            {cloudServices.map((service, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
@@ -133,11 +175,11 @@ export default function AppDevelopmentPage() {
               >
                 <Card className="h-full">
                   <CardContent className="p-6 text-center">
-                    <type.icon className="h-12 w-12 text-purple-600 mx-auto mb-4" />
-                    <h3 className="text-xl font-semibold mb-3 text-gray-900">{type.title}</h3>
-                    <p className="text-gray-600 mb-4">{type.description}</p>
+                    <service.icon className="h-12 w-12 text-cyan-600 mx-auto mb-4" />
+                    <h3 className="text-xl font-semibold mb-3 text-gray-900">{service.title}</h3>
+                    <p className="text-gray-600 mb-4">{service.description}</p>
                     <ul className="text-left space-y-2">
-                      {type.features.map((feature, idx) => (
+                      {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-center text-sm">
                           <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
                           {feature}
@@ -153,7 +195,7 @@ export default function AppDevelopmentPage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -162,7 +204,7 @@ export default function AppDevelopmentPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Why Choose Our App Development?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Cloud Features</h2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -177,7 +219,7 @@ export default function AppDevelopmentPage() {
               >
                 <Card className="h-full text-center">
                   <CardContent className="p-6">
-                    <feature.icon className="h-12 w-12 text-purple-600 mx-auto mb-4" />
+                    <feature.icon className="h-12 w-12 text-cyan-600 mx-auto mb-4" />
                     <h3 className="text-xl font-semibold mb-3 text-gray-900">{feature.title}</h3>
                     <p className="text-gray-600">{feature.description}</p>
                   </CardContent>
@@ -188,8 +230,8 @@ export default function AppDevelopmentPage() {
         </div>
       </section>
 
-      {/* Technologies Section */}
-      <section className="py-16 px-4">
+      {/* Cloud Providers Section */}
+      <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -198,11 +240,11 @@ export default function AppDevelopmentPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Technologies We Master</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Cloud Platforms & Technologies</h2>
           </motion.div>
 
           <div className="flex flex-wrap justify-center gap-3">
-            {technologies.map((tech, index) => (
+            {cloudProviders.map((provider, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -212,7 +254,7 @@ export default function AppDevelopmentPage() {
                 whileHover={{ scale: 1.05 }}
               >
                 <Badge variant="secondary" className="text-sm py-2 px-4">
-                  {tech}
+                  {provider}
                 </Badge>
               </motion.div>
             ))}
@@ -221,7 +263,7 @@ export default function AppDevelopmentPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 bg-gradient-to-r from-purple-600 to-pink-600">
+      <section className="py-16 px-4 bg-gradient-to-r from-cyan-600 to-blue-600">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -229,13 +271,13 @@ export default function AppDevelopmentPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Ready to Build Your App?</h2>
-            <p className="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
-              Let's turn your app idea into reality with our expert development team.
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Ready to Move to the Cloud?</h2>
+            <p className="text-xl text-cyan-100 mb-8 max-w-2xl mx-auto">
+              Let's build a cloud infrastructure that scales with your business and reduces operational costs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" onClick={() => window.open("https://wa.me/919731070591", "_blank")}>
-                Start Your Project
+                Start Cloud Migration
               </Button>
             </div>
           </motion.div>

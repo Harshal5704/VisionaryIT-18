@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Navigation } from "@/components/navigation"
+import { Footer } from "@/components/footer"
 
 export default function WebsiteDevelopmentPage() {
   const features = [
@@ -251,6 +252,9 @@ export default function WebsiteDevelopmentPage() {
           Let's chat
         </Button>
       </motion.div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   )
 }

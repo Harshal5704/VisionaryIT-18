@@ -19,11 +19,14 @@ export function Navigation({ darkMode = false, setDarkMode }: NavigationProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/">
-            <motion.div className="flex items-center space-x-2" whileHover={{ scale: 1.05 }}>
+            <motion.div className="flex items-center space-x-3" whileHover={{ scale: 1.05 }}>
               <div className="w-10 h-10 relative">
                 <img src="/vft-logo-new.png" alt="Vision Flow Technologies Logo" className="w-10 h-10 object-contain" />
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              <div className="hidden sm:block">
+                <img src="/vft-logo-horizontal.png" alt="Vision Flow Technologies" className="h-8 object-contain" />
+              </div>
+              <span className="sm:hidden text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                 Vision Flow Technologies
               </span>
             </motion.div>

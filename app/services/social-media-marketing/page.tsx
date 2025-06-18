@@ -15,6 +15,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
+import { Footer } from "@/components/footer"
 
 export default function SocialMediaMarketingPage() {
   const services = [
@@ -251,6 +252,9 @@ export default function SocialMediaMarketingPage() {
           Let's chat
         </Button>
       </motion.div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   )
 }

@@ -1,71 +1,78 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Smartphone, Monitor, Tablet, Zap, Shield, Users, CheckCircle, MessageCircle } from "lucide-react"
+import { Monitor, Smartphone, Globe, Zap, CheckCircle, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 
-export default function AppDevelopmentPage() {
+export default function DigitalSolutionsPage() {
   const features = [
     {
+      icon: Monitor,
+      title: "Digital Transformation",
+      description: "Complete digital transformation strategies for modern businesses",
+    },
+    {
       icon: Smartphone,
-      title: "Native & Cross-Platform",
-      description: "iOS, Android, and cross-platform solutions using latest technologies",
+      title: "Mobile-First Approach",
+      description: "Solutions designed with mobile users as the primary focus",
+    },
+    {
+      icon: Globe,
+      title: "Global Reach",
+      description: "Scalable solutions that work across different markets and regions",
     },
     {
       icon: Zap,
-      title: "High Performance",
-      description: "Optimized apps with fast loading times and smooth user experience",
+      title: "Performance Optimization",
+      description: "High-performance digital solutions for maximum efficiency",
+    },
+  ]
+
+  const services = [
+    {
+      title: "Digital Strategy Consulting",
+      description: "Comprehensive digital transformation roadmaps",
+      icon: Monitor,
+      features: ["Digital Audit", "Strategy Development", "Implementation Planning", "Performance Monitoring"],
     },
     {
-      icon: Shield,
-      title: "Secure & Scalable",
-      description: "Enterprise-grade security with scalable architecture",
+      title: "Custom Software Development",
+      description: "Tailored software solutions for unique business needs",
+      icon: Smartphone,
+      features: ["Enterprise Applications", "API Development", "System Integration", "Legacy Modernization"],
     },
     {
-      icon: Users,
-      title: "User-Centric Design",
-      description: "Intuitive interfaces designed for maximum user engagement",
+      title: "Digital Marketing Solutions",
+      description: "Complete digital marketing ecosystem",
+      icon: Globe,
+      features: ["SEO & SEM", "Content Marketing", "Email Campaigns", "Analytics & Reporting"],
     },
   ]
 
   const technologies = [
-    "Swift",
-    "Kotlin",
-    "Flutter",
-    "React Native",
-    "Java",
+    "React",
+    "Node.js",
     "Python",
-    "Firebase",
     "AWS",
+    "Azure",
+    "Docker",
+    "Kubernetes",
     "MongoDB",
     "PostgreSQL",
-    "Node.js",
-    "Express.js",
+    "Redis",
+    "GraphQL",
+    "TypeScript",
   ]
 
-  const appTypes = [
-    {
-      title: "Mobile Apps",
-      description: "Native iOS and Android applications",
-      icon: Smartphone,
-      features: ["iOS Development", "Android Development", "App Store Optimization", "Push Notifications"],
-    },
-    {
-      title: "Web Applications",
-      description: "Progressive web apps and web platforms",
-      icon: Monitor,
-      features: ["Progressive Web Apps", "Single Page Applications", "Real-time Features", "Cloud Integration"],
-    },
-    {
-      title: "Enterprise Solutions",
-      description: "Custom business applications and workflows",
-      icon: Tablet,
-      features: ["Custom CRM/ERP", "Workflow Automation", "Data Analytics", "Third-party Integration"],
-    },
+  const benefits = [
+    { title: "Increased Efficiency", description: "Streamline operations with digital automation" },
+    { title: "Better Customer Experience", description: "Enhanced user journeys across all touchpoints" },
+    { title: "Data-Driven Insights", description: "Make informed decisions with analytics" },
+    { title: "Scalable Solutions", description: "Grow your business with flexible architecture" },
   ]
 
   return (
@@ -74,7 +81,7 @@ export default function AppDevelopmentPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4 bg-gradient-to-br from-purple-50 to-pink-50">
+      <section className="pt-24 pb-16 px-4 bg-gradient-to-br from-blue-50 to-indigo-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -84,31 +91,31 @@ export default function AppDevelopmentPage() {
           >
             <div className="flex justify-center mb-6">
               <div className="p-4 bg-white rounded-full shadow-lg">
-                <Smartphone className="h-12 w-12 text-purple-600" />
+                <Monitor className="h-12 w-12 text-blue-600" />
               </div>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">App Development</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">Digital Solutions</h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Transform your ideas into powerful mobile and web applications. We create robust, scalable apps that
-              deliver exceptional user experiences across all platforms.
+              Transform your business with cutting-edge digital solutions. We help organizations modernize their
+              operations, enhance customer experiences, and drive growth through innovative technology.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white"
                 onClick={() => window.open("https://wa.me/919731070591", "_blank")}
               >
-                Start Your App
+                Start Digital Transformation
               </Button>
               <Button variant="outline" size="lg">
-                View Portfolio
+                View Case Studies
               </Button>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* App Types Section */}
+      {/* Benefits Section */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -118,11 +125,46 @@ export default function AppDevelopmentPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Types of Applications We Build</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Why Choose Our Digital Solutions?</h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+              >
+                <Card className="text-center h-full">
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold mb-3 text-gray-900">{benefit.title}</h3>
+                    <p className="text-gray-600">{benefit.description}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Our Digital Services</h2>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {appTypes.map((type, index) => (
+            {services.map((service, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
@@ -133,11 +175,11 @@ export default function AppDevelopmentPage() {
               >
                 <Card className="h-full">
                   <CardContent className="p-6 text-center">
-                    <type.icon className="h-12 w-12 text-purple-600 mx-auto mb-4" />
-                    <h3 className="text-xl font-semibold mb-3 text-gray-900">{type.title}</h3>
-                    <p className="text-gray-600 mb-4">{type.description}</p>
+                    <service.icon className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                    <h3 className="text-xl font-semibold mb-3 text-gray-900">{service.title}</h3>
+                    <p className="text-gray-600 mb-4">{service.description}</p>
                     <ul className="text-left space-y-2">
-                      {type.features.map((feature, idx) => (
+                      {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-center text-sm">
                           <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
                           {feature}
@@ -153,7 +195,7 @@ export default function AppDevelopmentPage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -162,7 +204,7 @@ export default function AppDevelopmentPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Why Choose Our App Development?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Our Approach</h2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -177,7 +219,7 @@ export default function AppDevelopmentPage() {
               >
                 <Card className="h-full text-center">
                   <CardContent className="p-6">
-                    <feature.icon className="h-12 w-12 text-purple-600 mx-auto mb-4" />
+                    <feature.icon className="h-12 w-12 text-blue-600 mx-auto mb-4" />
                     <h3 className="text-xl font-semibold mb-3 text-gray-900">{feature.title}</h3>
                     <p className="text-gray-600">{feature.description}</p>
                   </CardContent>
@@ -189,7 +231,7 @@ export default function AppDevelopmentPage() {
       </section>
 
       {/* Technologies Section */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -198,7 +240,7 @@ export default function AppDevelopmentPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Technologies We Master</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Technologies We Use</h2>
           </motion.div>
 
           <div className="flex flex-wrap justify-center gap-3">
@@ -221,7 +263,7 @@ export default function AppDevelopmentPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 bg-gradient-to-r from-purple-600 to-pink-600">
+      <section className="py-16 px-4 bg-gradient-to-r from-blue-600 to-indigo-600">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -229,13 +271,13 @@ export default function AppDevelopmentPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Ready to Build Your App?</h2>
-            <p className="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
-              Let's turn your app idea into reality with our expert development team.
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Ready to Go Digital?</h2>
+            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+              Let's transform your business with innovative digital solutions that drive growth and efficiency.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" onClick={() => window.open("https://wa.me/919731070591", "_blank")}>
-                Start Your Project
+                Start Your Digital Journey
               </Button>
             </div>
           </motion.div>
