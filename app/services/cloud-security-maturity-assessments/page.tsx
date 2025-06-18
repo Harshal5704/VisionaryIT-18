@@ -133,4 +133,4 @@ export default function CloudSecurityMaturityAssessmentsPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-red-600 to-orange\
+                className=\"bg-gradient-to-r from-red-600 to-orange
