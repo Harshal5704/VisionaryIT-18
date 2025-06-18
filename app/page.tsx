@@ -168,6 +168,22 @@ function CursorFollower() {
 function InteractiveServiceCard({ service, index }: { service: any; index: number }) {
   const [isHovered, setIsHovered] = useState(false)
 
+  const getServiceSlug = (title: string) => {
+    const slugMap: { [key: string]: string } = {
+      "Website Development": "website-development",
+      "App Development": "app-development",
+      "Brand Building": "brand-building",
+      "Social Media Marketing": "social-media-marketing",
+      "E-Commerce Solutions": "e-commerce-solutions",
+      "Cloud Hosting & Managed Services": "cloud-hosting-managed-services",
+      "Cloud Migration": "cloud-migration",
+      "End-User Computing (EUC)": "end-user-computing",
+      "Cloud FinOps": "cloud-finops",
+      "Cloud Security & Maturity Assessments": "cloud-security-maturity-assessments",
+    }
+    return slugMap[title] || title.toLowerCase().replace(/\s+/g, "-").replace(/[()&]/g, "")
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -227,16 +243,11 @@ function InteractiveServiceCard({ service, index }: { service: any; index: numbe
             </div>
           )}
 
-          <Button
-            variant="ghost"
-            className="p-0 h-auto text-blue-600 hover:text-blue-700 mt-4"
-            onClick={() => {
-              const serviceSlug = service.title.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "and")
-              window.location.href = `/services/${serviceSlug}`
-            }}
-          >
-            Learn More <ChevronRight className="ml-1 h-4 w-4" />
-          </Button>
+          <Link href={`/services/${getServiceSlug(service.title)}`}>
+            <Button variant="ghost" className="p-0 h-auto text-blue-600 hover:text-blue-700 mt-4">
+              Learn More <ChevronRight className="ml-1 h-4 w-4" />
+            </Button>
+          </Link>
         </CardContent>
       </Card>
     </motion.div>

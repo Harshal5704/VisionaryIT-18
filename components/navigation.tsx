@@ -20,7 +20,7 @@ export function Navigation({ darkMode = false, setDarkMode }: NavigationProps) {
         <div className="flex justify-between items-center h-16">
           <Link href="/">
             <motion.div className="flex items-center" whileHover={{ scale: 1.05 }}>
-              <img src="/vft-logo-horizontal.png" alt="Vision Flow Technologies" className="h-10 object-contain" />
+              <img src="/vft-logo-horizontal.png" alt="Vision Flow Technologies" className="h-8 object-contain" />
             </motion.div>
           </Link>
 
